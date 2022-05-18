@@ -1,5 +1,5 @@
 # RPL-Desain-Implementasi_Zuta
 
-Zuta merpakan aplikasi e-commerce
+Zuta merupakan aplikasi e-commerce
 
 ### ini branch main
