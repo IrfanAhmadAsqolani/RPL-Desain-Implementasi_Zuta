@@ -2,4 +2,3 @@
 
 Zuta merupakan aplikasi e-commerce
 
-### ini branch main
