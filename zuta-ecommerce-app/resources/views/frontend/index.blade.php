@@ -187,7 +187,7 @@
     $featured=DB::table('products')->where('is_featured',1)->where('status','active')->orderBy('id','DESC')->limit(1)->get();
 @endphp --}}
     <!-- Start Midium Banner  -->
-    <section class="midium-banner">
+    {{-- <section class="midium-banner">
         <div class="container">
             <div class="row">
                 @if ($featured)
@@ -211,7 +211,7 @@
                 @endif
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- End Midium Banner -->
 
     <!-- Start Most Popular -->
@@ -262,7 +262,8 @@
                                                 href="{{ route('product-detail', $product->slug) }}">{{ $product->title }}</a>
                                         </h3>
                                         <div class="product-price">
-                                            <span class="old">Rp.{{ number_format($product->price, 2) }}</span>
+                                            <span
+                                                class="old">Rp.{{ number_format($product->price, 2) }}</span>
                                             @php
                                                 $after_discount = $product->price - ($product->price * $product->discount) / 100;
                                             @endphp
@@ -320,7 +321,10 @@
                                             <div class="content">
                                                 <h4 class="title"><a href="#">{{ $product->title }}</a></h4>
                                                 <p class="price with-discount">
-                                                    Rp.{{ number_format($product->discount, 2) }}
+                                                    @php
+                                                        $after_discount = $product->price - ($product->price * $product->discount) / 100;
+                                                    @endphp
+                                                    <span>Rp.{{ number_format($after_discount, 2) }}</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -488,12 +492,6 @@
 @endsection
 
 @push('styles')
-    <script type='text/javascript'
-        src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons'
-        async='async'></script>
-    <script type='text/javascript'
-        src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons'
-        async='async'></script>
     <style>
         /* Banner Sliding */
         #Gslider .carousel-inner {
@@ -537,7 +535,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script>
         /*==================================================================
-                    [ Isotope ]*/
+                                    [ Isotope ]*/
         var $topeContainer = $('.isotope-grid');
         var $filter = $('.filter-tope-group');
 

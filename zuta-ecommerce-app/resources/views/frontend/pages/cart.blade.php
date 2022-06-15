@@ -53,7 +53,7 @@
                                                 <p class="product-des">{!! $cart['summary'] !!}</p>
                                             </td>
                                             <td class="price" data-title="Price">
-                                                <span>${{ number_format($cart['price'], 2) }}</span>
+                                                <span>Rp. {{ number_format($cart['price'], 2) }}</span>
                                             </td>
                                             <td class="qty" data-title="Qty">
                                                 <!-- Input Order -->
@@ -79,7 +79,7 @@
                                                 <!--/ End Input Order -->
                                             </td>
                                             <td class="total-amount cart_single_price" data-title="Total"><span
-                                                    class="money">${{ $cart['amount'] }}</span></td>
+                                                    class="money">Rp. {{ $cart['amount'] }}</span></td>
 
                                             <td class="action" data-title="Remove"><a
                                                     href="{{ route('cart-delete', $cart->id) }}"><i
@@ -138,13 +138,15 @@
                                 <div class="right">
                                     <ul>
                                         <li class="order_subtotal" data-price="{{ Helper::totalCartPrice() }}">Cart
-                                            Subtotal<span>${{ number_format(Helper::totalCartPrice(), 2) }}</span></li>
+                                            Subtotal<span>Rp. {{ number_format(Helper::totalCartPrice(), 2) }}</span>
+                                        </li>
 
                                         @if (session()->has('coupon'))
                                             <li class="coupon_price"
                                                 data-price="{{ Session::get('coupon')['value'] }}">
                                                 You
-                                                Save<span>${{ number_format(Session::get('coupon')['value'], 2) }}</span>
+                                                Save<span>Rp.
+                                                    {{ number_format(Session::get('coupon')['value'], 2) }}</span>
                                             </li>
                                         @endif
                                         @php
@@ -155,10 +157,10 @@
                                         @endphp
                                         @if (session()->has('coupon'))
                                             <li class="last" id="order_total_price">You
-                                                Pay<span>${{ number_format($total_amount, 2) }}</span></li>
+                                                Pay<span>Rp. {{ number_format($total_amount, 2) }}</span></li>
                                         @else
                                             <li class="last" id="order_total_price">You
-                                                Pay<span>${{ number_format($total_amount, 2) }}</span></li>
+                                                Pay<span>Rp. {{ number_format($total_amount, 2) }}</span></li>
                                         @endif
                                     </ul>
                                     <div class="button5">
