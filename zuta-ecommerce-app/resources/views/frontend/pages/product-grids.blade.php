@@ -88,36 +88,7 @@
 
                             </div>
                             <!--/ End Shop By Price -->
-                            <!-- Single Widget -->
-                            <div class="single-widget recent-post">
-                                <h3 class="title">Recent post</h3>
-                                {{-- {{dd($recent_products)}} --}}
-                                @foreach ($recent_products as $product)
-                                    <!-- Single Post -->
-                                    @php
-                                        $photo = explode(',', $product->photo);
-                                    @endphp
-                                    <div class="single-post first">
-                                        <div class="image">
-                                            <img src="{{ $photo[0] }}" alt="{{ $photo[0] }}">
-                                        </div>
-                                        <div class="content">
-                                            <h5><a
-                                                    href="{{ route('product-detail', $product->slug) }}">{{ $product->title }}</a>
-                                            </h5>
-                                            @php
-                                                $org = $product->price - ($product->price * $product->discount) / 100;
-                                            @endphp
-                                            <p class="price"><del
-                                                    class="text-muted">${{ number_format($product->price, 2) }}</del>
-                                                ${{ number_format($org, 2) }} </p>
 
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post -->
-                                @endforeach
-                            </div>
-                            <!--/ End Single Widget -->
                             <!-- Single Widget -->
                             <div class="single-widget category">
                                 <h3 class="title">Brands</h3>
@@ -224,8 +195,8 @@
                                                 @php
                                                     $after_discount = $product->price - ($product->price * $product->discount) / 100;
                                                 @endphp
-                                                <span>${{ number_format($after_discount, 2) }}</span>
-                                                <del style="padding-left:4%;">${{ number_format($product->price, 2) }}</del>
+                                                <span>Rp.{{ number_format($after_discount, 2) }}</span>
+                                                <del style="padding-left:4%;">Rp.{{ number_format($product->price, 2) }}</del>
                                             </div>
                                         </div>
                                     </div>
@@ -325,8 +296,8 @@
                                             $after_discount = $product->price - ($product->price * $product->discount) / 100;
                                         @endphp
                                         <h3><small><del
-                                                    class="text-muted">${{ number_format($product->price, 2) }}</del></small>
-                                            ${{ number_format($after_discount, 2) }} </h3>
+                                                    class="text-muted">Rp.{{ number_format($product->price, 2) }}</del></small>
+                                            Rp.{{ number_format($after_discount, 2) }} </h3>
                                         <div class="quickview-peragraph">
                                             <p>{!! html_entity_decode($product->summary) !!}</p>
                                         </div>

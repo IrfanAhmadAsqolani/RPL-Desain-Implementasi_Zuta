@@ -86,7 +86,7 @@
                 <div class="col-lg-2 col-md-3 col-12">
                     <div class="right-bar">
                         <!-- Search Form -->
-                        <div class="sinlge-bar shopping">
+                        {{-- <div class="sinlge-bar shopping">
                             @php
                                 $total_prod=0;
                                 $total_amount=0;
@@ -108,7 +108,7 @@
                                         <a href="{{route('wishlist')}}">View Wishlist</a>
                                     </div>
                                     <ul class="shopping-list">
-                                        {{-- {{Helper::getAllProductFromCart()}} --}}
+                                        {{Helper::getAllProductFromCart()}}  <!-- double komen -->
                                             @foreach(Helper::getAllProductFromWishlist() as $data)
                                                     @php
                                                         $photo=explode(',',$data->product['photo']);
@@ -131,7 +131,7 @@
                                 </div>
                             @endauth
                             <!--/ End Shopping Item -->
-                        </div>
+                        </div> --}}
                         {{-- <div class="sinlge-bar">
                             <a href="{{route('wishlist')}}" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div> --}}
@@ -182,13 +182,13 @@
                     <div class="col-lg-12 col-12">
                         <div class="menu-area">
                             <!-- Main Menu -->
-                            <nav class="navbar navbar-expand-lg">
+                            <nav class="navbar navbar-expand-lg ">
                                 <div class="navbar-collapse">
                                     <div class="nav-inner">
                                         <ul class="nav main-menu menu navbar-nav">
                                             <li class="{{Request::path()=='home' ? 'active' : ''}}"><a href="{{route('home')}}">Home</a></li>
                                             <li class="@if(Request::path()=='product-grids'||Request::path()=='product-lists')  active  @endif"><a href="{{route('product-grids')}}">Products</a></li>
-                                                {{Helper::getHeaderCategory()}}
+                                                {{-- {{Helper::getHeaderCategory()}} --}}
                                             <li class="{{Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact')}}">Contact Us</a></li>
                                             <li class="{{Request::path()=='about-us' ? 'active' : ''}}"><a href="{{route('about-us')}}">About Us</a></li>
                                         </ul>

@@ -102,22 +102,6 @@
 												</ul>
 											</div> --}}
                                 <!--/ End Color -->
-                                <!-- Size -->
-                                @if ($product_detail->size)
-                                    <div class="size mt-4">
-                                        <h4>Size</h4>
-                                        <ul>
-                                            @php
-                                                $sizes = explode(',', $product_detail->size);
-                                                // dd($sizes);
-                                            @endphp
-                                            @foreach ($sizes as $size)
-                                                <li><a href="#" class="one">{{ $size }}</a></li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-                                <!--/ End Size -->
                                 <!-- Product Buy -->
                                 <div class="product-buy">
                                     <form action="{{ route('single-add-to-cart') }}" method="POST">
@@ -146,8 +130,8 @@
                                         </div>
                                         <div class="add-to-cart mt-4">
                                             <button type="submit" class="btn">Add to cart</button>
-                                            <a href="{{ route('add-to-wishlist', $product_detail->slug) }}"
-                                                class="btn min"><i class="ti-heart"></i></a>
+                                            {{-- <a href="{{ route('add-to-wishlist', $product_detail->slug) }}"
+                                                class="btn min"><i class="ti-heart"></i></a> --}}
                                         </div>
                                     </form>
 
@@ -294,7 +278,7 @@
 
                                                     <div class="ratting-main">
                                                         <div class="avg-ratting">
-                                                            {{-- @php 
+                                                            {{-- @php
 																			$rate=0;
 																			foreach($product_detail->rate as $key=>$rate){
 																				$rate +=$rate
