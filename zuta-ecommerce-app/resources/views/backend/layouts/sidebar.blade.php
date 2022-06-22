@@ -127,11 +127,11 @@
     </li>
 
     <!-- Reviews -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="{{ route('review.index') }}">
             <i class="fas fa-comments"></i>
             <span>Reviews</span></a>
-    </li>
+    </li> -->
 
 
     {{-- <!-- Divider -->

@@ -81,7 +81,7 @@
                             <form method="POST" action="{{ route('product.search') }}">
                                 @csrf
                                 <input name="search" placeholder="Search Products Here....." type="search">
-                                <button class="btnn" type="submit"><i class="ti-search"></i></button>
+                                <button class="btnn bg-secondary" type="submit"><i class="ti-search"></i></button>
                             </form>
                         </div>
                     </div>
@@ -185,7 +185,7 @@
         </div>
     </div>
     <!-- Header Inner -->
-    <div class="header-inner">
+    <div class="header-inner bg-secondary">
         <div class="container">
             <div class="cat-nav-head">
                 <div class="row">
