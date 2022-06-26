@@ -88,8 +88,8 @@
 
     {{-- Brands --}}
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#brandCollapse" aria-expanded="true"
-            aria-controls="brandCollapse">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#brandCollapse"
+            aria-expanded="true" aria-controls="brandCollapse">
             <i class="fas fa-table"></i>
             <span>Brands</span>
         </a>
@@ -127,11 +127,11 @@
     </li>
 
     <!-- Reviews -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="{{ route('review.index') }}">
             <i class="fas fa-comments"></i>
             <span>Reviews</span></a>
-    </li>
+    </li> --}}
 
 
     {{-- <!-- Divider -->

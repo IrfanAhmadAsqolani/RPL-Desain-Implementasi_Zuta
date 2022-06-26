@@ -79,14 +79,15 @@
                                                 @endif
                                             @endfor
                                         </ul>
-                                        <a href="#" class="total-review">({{ $product_detail['getReview']->count() }})
+                                        <a href="#"
+                                            class="total-review">({{ $product_detail['getReview']->count() }})
                                             Review</a>
                                     </div>
                                     @php
                                         $after_discount = $product_detail->price - ($product_detail->price * $product_detail->discount) / 100;
                                     @endphp
                                     <p class="price"><span
-                                            class="discount">${{ number_format($after_discount, 2) }}</span><s>${{ number_format($product_detail->price, 2) }}</s>
+                                            class="discount">Rp{{ number_format($after_discount, 2) }}</span><s>Rp{{ number_format($product_detail->price, 2) }}</s>
                                     </p>
                                     <p class="description">{!! $product_detail->summary !!}</p>
                                 </div>
@@ -162,8 +163,8 @@
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                                         <li class="nav-item"><a class="nav-link active" data-toggle="tab"
                                                 href="#description" role="tab">Description</a></li>
-                                        <li class="nav-item"><a class="nav-link" data-toggle="tab"
-                                                href="#reviews" role="tab">Reviews</a></li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#reviews"
+                                                role="tab">Reviews</a></li>
                                     </ul>
                                     <!--/ End Tab Nav -->
                                 </div>
@@ -285,7 +286,8 @@
 																			}
 																		@endphp --}}
                                                             <h4>{{ ceil($product_detail->getReview->avg('rate')) }}
-                                                                <span>(Overall)</span></h4>
+                                                                <span>(Overall)</span>
+                                                            </h4>
                                                             <span>Based on {{ $product_detail->getReview->count() }}
                                                                 Comments</span>
                                                         </div>
@@ -366,8 +368,7 @@
                                             @endphp
                                             <img class="default-img" src="{{ $photo[0] }}"
                                                 alt="{{ $photo[0] }}">
-                                            <img class="hover-img" src="{{ $photo[0] }}"
-                                                alt="{{ $photo[0] }}">
+                                            <img class="hover-img" src="{{ $photo[0] }}" alt="{{ $photo[0] }}">
                                             <span class="price-dec">{{ $data->discount }} % Off</span>
                                             {{-- <span class="out-of-stock">Hot</span> --}}
                                         </a>
@@ -377,7 +378,8 @@
                                                     href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
                                                 <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
                                                         Wishlist</span></a>
-                                                <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
+                                                <a title="Compare" href="#"><i
+                                                        class="ti-bar-chart-alt"></i><span>Add to
                                                         Compare</span></a>
                                             </div>
                                             <div class="product-action-2">
@@ -386,7 +388,8 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="{{ route('product-detail', $data->slug) }}">{{ $data->title }}</a>
+                                        <h3><a
+                                                href="{{ route('product-detail', $data->slug) }}">{{ $data->title }}</a>
                                         </h3>
                                         <div class="product-price">
                                             @php
@@ -494,8 +497,8 @@
                                                 <i class="ti-minus"></i>
                                             </button>
                                         </div>
-                                        <input type="text" name="qty" class="input-number" data-min="1" data-max="1000"
-                                            value="1">
+                                        <input type="text" name="qty" class="input-number" data-min="1"
+                                            data-max="1000" value="1">
                                         <div class="button plus">
                                             <button type="button" class="btn btn-primary btn-number" data-type="plus"
                                                 data-field="quant[1]">

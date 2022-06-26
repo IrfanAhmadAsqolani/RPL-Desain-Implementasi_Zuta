@@ -81,7 +81,7 @@
                             <form method="POST" action="{{ route('product.search') }}">
                                 @csrf
                                 <input name="search" placeholder="Search Products Here....." type="search">
-                                <button class="btnn" type="submit"><i class="ti-search"></i></button>
+                                <button class="btnn bg-secondary" type="submit"><i class="ti-search"></i></button>
                             </form>
                         </div>
                     </div>
@@ -161,8 +161,7 @@
                                                         alt="{{ $photo[0] }}"></a>
                                                 <h4><a href="{{ route('product-detail', $data->product['slug']) }}"
                                                         target="_blank">{{ $data->product['title'] }}</a></h4>
-                                                <p class="quantity">{{ $data->quantity }} x - <span
-                                                        class="amount">Rp.
+                                                <p class="quantity">{{ $data->quantity }} x - <span class="amount">Rp.
                                                         {{ number_format($data->price, 2) }}</span></p>
                                             </li>
                                         @endforeach
@@ -185,7 +184,7 @@
         </div>
     </div>
     <!-- Header Inner -->
-    <div class="header-inner">
+    <div class="header-inner bg-secondary">
         <div class="container">
             <div class="cat-nav-head">
                 <div class="row">

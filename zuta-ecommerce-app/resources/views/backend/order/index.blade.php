@@ -56,7 +56,7 @@
                                     <td>{{ $order->quantity }}</td>
                                     <td>
                                         @foreach ($shipping_charge as $data)
-                                            $ {{ number_format($data, 2) }}
+                                            Rp {{ number_format($data, 2) }}
                                         @endforeach
                                     </td>
                                     <td>Rp. {{ number_format($order->total_amount, 2) }}</td>
